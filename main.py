@@ -17,7 +17,6 @@ from openai import OpenAI
 # =========================
 FOOTBALL_DATA_API_KEY = os.getenv("FOOTBALL_DATA_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")  # Your Claude API key
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyC62FAT55vqRGVDAxgV9f-3rUY2eXngzWc")  # Google Gemini (FREE!)
 API_FOOTBALL_KEY = os.getenv("API_FOOTBALL_KEY", "39d7d3d558fa860cae92c38fca89246a")
 
@@ -27,18 +26,6 @@ if not OPENAI_API_KEY:
     raise RuntimeError("OPENAI_API_KEY is NOT set")
 
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
-
-# Claude client (for web search AI chat)
-try:
-    import anthropic
-    if ANTHROPIC_API_KEY:
-        anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    else:
-        anthropic_client = None
-        print("Warning: ANTHROPIC_API_KEY not set - Claude AI chat disabled")
-except ImportError:
-    anthropic_client = None
-    print("Warning: anthropic package not installed - Claude AI chat disabled")
 
 # Google Gemini client (FREE web search!)
 try:
