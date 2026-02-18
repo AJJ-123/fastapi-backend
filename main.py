@@ -85,14 +85,6 @@ app.add_middleware(
 # FRONTEND SERVING
 # =========================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FRONTEND_DIR = os.path.join(BASE_DIR, "..", "frontend")
-
-@app.get("/")
-def serve_index():
-    return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
-
-app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
-
 
 # =========================
 # MODELS
