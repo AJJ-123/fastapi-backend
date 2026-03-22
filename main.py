@@ -5006,7 +5006,7 @@ async def create_checkout_session(request: dict):
             "cancel_url":  f"{SITE_URL}?payment=cancelled",
             "allow_promotion_codes": True,
             "subscription_data": {
-                "trial_period_days": 7,  # 7-day free trial
+                "trial_period_days": 0,  # 7-day free trial
             },
         }
         if email:
