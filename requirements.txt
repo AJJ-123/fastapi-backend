@@ -1,0 +1,5 @@
+openpyxl
+requests
+beautifulsoup4
+pywebpush
+cryptography
