@@ -1,9 +1,0 @@
-fastapi
-uvicorn[standard]
-openpyxl
-requests
-beautifulsoup4
-pywebpush
-cryptography
-python-multipart
-httpx
